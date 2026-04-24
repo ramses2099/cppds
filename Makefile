@@ -8,7 +8,7 @@ SRC_DIR = src
 
 # Target executable name
 TARGET = $(BIN_DIR)/app
-OBJS = $(OBJ_DIR)/main.o #$(OBJ_DIR)/set.o
+OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/Stack.o
 
 # Build the final executable
 all: $(TARGET)
