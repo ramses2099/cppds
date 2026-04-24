@@ -1,35 +1,47 @@
 #include <iostream>
 #include <string>
 #include <math.h>
-#include "Queue.h"
+#include <memory>
 
 using namespace std;
 
+typedef int16_t i16;
+
+class Node
+{
+public:
+    i16 value;
+    Node *next;
+};
+
 int main()
 {
-
-    // Queue
-    class Queue q;
-
-    // deQueue is not possible on empty queue
-    q.deQueue();
-
-    // enQueue
-    q.enQueue(1);
-    q.enQueue(2);
-    q.enQueue(3);
-    q.enQueue(4);
-    q.enQueue(5);
-
-    //6th element can't be added to queue beacuese queue is full
-    q.enQueue(6);
+    // linked list
+    Node *head;
+    Node *nd1 = NULL;
+    Node *nd2 = NULL;
+    Node *nd3 = NULL;
     
-    // q.display();
+    // allocate memory
+    nd1 = new Node();
+    nd2 = new Node();
+    nd3 = new Node();
 
-    //deQueue removes element entered first i.e 1
-    q.deQueue();
-    //Now we have just 4 elements
-    q.display();
+    // assign value
+    nd1->value = 0;
+    nd2->value = 1;
+    nd3->value = 2;
+    
+    // connect nodes
+    nd1->next = nd2;
+    nd2->next = nd3;
+    nd3->next = NULL;
+
+    head = nd1;
+    while(head != NULL){
+        cout << "Head values: " << head->value << endl;
+        head = head->next;
+    }
 
 
     return EXIT_SUCCESS;
