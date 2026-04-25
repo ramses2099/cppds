@@ -3,6 +3,8 @@
 #include <math.h>
 #include <memory>
 
+// TODO check STL Standar Template Library c++
+
 using namespace std;
 
 typedef int16_t i16;
@@ -43,6 +45,15 @@ int main()
         head = head->next;
     }
 
+    // delocate memory
+    delete nd3;
+    delete nd2;
+    delete nd1;
+    delete head;
+    nd3 = NULL;
+    nd2 = NULL;
+    nd1 = NULL;
+    head = NULL;
 
     return EXIT_SUCCESS;
 }

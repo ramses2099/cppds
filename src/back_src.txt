@@ -125,6 +125,15 @@ int main()
         head = head->next;
     }
 
+    // delocate memory
+    delete nd3;
+    delete nd2;
+    delete nd1;
+    delete head;
+    nd3 = NULL;
+    nd2 = NULL;
+    nd1 = NULL;
+    head = NULL;
 
     return EXIT_SUCCESS;
 }
