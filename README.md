@@ -1,38 +1,61 @@
 # Example of using STL C++
 
-## Snippets for competitive programming codeforce By sar_warish,
 
-VS code is one of the most widely used code editors by people around the world. In this post i will guide u to setup a small beginners default code sample for Cpp programmers and will provide u with a .json formatted text for use.
+The Standard Template Library (STL) is a powerful set of C++ template classes and functions that provide common data structures and algorithms. It is essentially a library of "pre-built" tools that save you from reinventing the wheel (like writing your own sorting algorithm or linked list from scratch).
 
-1 : Open VS code > File > Prefrences > User Snippets
+The STL is built on three main pillars: Containers, Algorithms, and Iterators.
 
-2 : then select cpp from the drop down(or just type it in, if not available download a cpp code extension from the market : "C/C++ for Visual Studio Code")
+- Containers: Object that store data(Data Structure) e.g vector, list, stack, map
+- Algorithms: Functions used to manipulation data search, sorting e.g sort, find
+- Iterators: Object that act like "pointers" to bridge algorithms and containers e.g begin(), end(); 
 
-3 : then paste below json code in the cpp.json file :
+## Container vector
+std::vector is a sequence container that represents a dynamic array.
+
+Unlike standard arrays (e.g., int arr[5]), which have a fixed size determined at compile time, a vector can grow or shrink in size automatically as you add or remove elements. It is the most commonly used container in C++ because it offers a great balance of speed and flexibility.
 
 ```
+/***
+ *  STL: Standard Template Library
+ *  -- Data Structure and Algorithms
+ */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
 {
-	"Competitive Programming":{
-		"prefix": "!Cpp",
-		"body": [
-			"#include <bits/stdc++.h>",
-			"using namespace std;",
-			"",
-			"int main(){",
-			"\tios_base::sync_with_stdio(false);",
-			"\tcin.tie(nullptr);",
-            "\tcout.tie(nullptr);",
-			"\t",
-			"\t$0",
-			"}"
-		],
-		"description": "competitive programming starte code."
-	}
+    vector<int> vec;
+    vec.push_back(4);
+    vec.push_back(1);
+    vec.push_back(8);
+
+    vector<int>::iterator itr1 = vec.begin();
+    vector<int>::iterator itr2 = vec.end();
+
+    // Iterator at like pointer
+    cout << "vector element unsort" << endl;
+    for (vector<int>::iterator itr = itr1; itr != itr2; ++itr)
+    {
+        cout << *itr << " ";
+    }
+
+    sort(itr1, itr2);
+
+    cout << endl
+         << "vector elemt sort" << endl;
+    // sort element vector
+    for (vector<int>::iterator itr = itr1; itr != itr2; ++itr)
+    {
+        cout << *itr << " ";
+    }
+
+    cout << endl;
+    return EXIT_SUCCESS;
 }
+
+
 ```
-
-4 : now save it
-
-5 : open a new file with .cpp extension
-
-6 : just type : !Cpp and select cpp- cp from the dropdown..... That's it.
