@@ -9,6 +9,16 @@ The STL is built on three main pillars: Containers, Algorithms, and Iterators.
 - Algorithms: Functions used to manipulation data search, sorting e.g sort, find
 - Iterators: Object that act like "pointers" to bridge algorithms and containers e.g begin(), end(); 
 
+## Resaons to use C++ standard library:
+- Code reuse, no need to re-invent the wheel
+- Efficiency (fast and use less resources). Modern C++ compiler are usually tuned to optimize for C++ standard library code.
+- Accurate, less buggy.
+- Terse, readable code; reduced control flow.
+- Standardization, guarenteed availability.
+- A role model of writing library.
+- Good knowledge of data structures and algorithms.
+
+
 ## Container vector
 std::vector is a sequence container that represents a dynamic array.
 
