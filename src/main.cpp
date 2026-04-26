@@ -5,7 +5,16 @@
 
 #include <iostream>
 #include <vector>
+#include <deque>
+#include <list>
+#include <set>           //set and multiset
+#include <map>           //set and multimap
+#include <unordered_set> //unordered set/ multiset
+#include <unordered_map> //unordered map/ multimap
+#include <iterator>
 #include <algorithm>
+#include <numeric> // some numeric algorithm
+#include <functional>
 
 using namespace std;
 
@@ -18,6 +27,14 @@ int main()
 
     vector<int>::iterator itr1 = vec.begin();
     vector<int>::iterator itr2 = vec.end();
+
+    //Fastes option traversal container
+    /*
+    for (vector<int>::iterator itr = vec.begin(); itr != vec.end(); ++itr)
+    {
+        cout << *itr << " ";
+    }
+    */
 
     // Iterator at like pointer
     cout << "vector element unsort" << endl;
