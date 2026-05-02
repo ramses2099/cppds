@@ -83,3 +83,27 @@ int main()
 #include <numeric> // some numeric algorithm
 #include <functional>
 ```
+
+## Pairs
+```
+ pair<int, int> p{1, 3};
+
+    cout << "{" << p.first << "," << p.second << "}" << endl;
+
+    pair<int, pair<int, int>> pp = {1, {3, 4}};
+
+    // prints
+    cout << "{" << pp.first << ",{" << pp.second.first << "," << pp.second.second << "}}" << endl;
+
+    // pairs arr[]
+    pair<int, int> arr[] = {{1, 2}, {2, 3}, {3, 5}};
+
+    cout << "{";
+    for (pair<int, int> item : arr)
+    {
+        cout << "{" << item.first << "," << pp.second.second << "}";
+    }
+    cout << "}" << endl;
+
+    cout << endl;
+```

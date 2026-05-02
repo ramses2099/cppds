@@ -20,38 +20,24 @@ using namespace std;
 
 int main()
 {
-    vector<int> vec;
-    vec.push_back(4);
-    vec.push_back(1);
-    vec.push_back(8);
+    pair<int, int> p{1, 3};
 
-    vector<int>::iterator itr1 = vec.begin();
-    vector<int>::iterator itr2 = vec.end();
+    cout << "{" << p.first << "," << p.second << "}" << endl;
 
-    //Fastes option traversal container
-    /*
-    for (vector<int>::iterator itr = vec.begin(); itr != vec.end(); ++itr)
+    pair<int, pair<int, int>> pp = {1, {3, 4}};
+
+    // prints
+    cout << "{" << pp.first << ",{" << pp.second.first << "," << pp.second.second << "}}" << endl;
+
+    // pairs arr[]
+    pair<int, int> arr[] = {{1, 2}, {2, 3}, {3, 5}};
+
+    cout << "{";
+    for (pair<int, int> item : arr)
     {
-        cout << *itr << " ";
+        cout << "{" << item.first << "," << pp.second.second << "}";
     }
-    */
-
-    // Iterator at like pointer
-    cout << "vector element unsort" << endl;
-    for (vector<int>::iterator itr = itr1; itr != itr2; ++itr)
-    {
-        cout << *itr << " ";
-    }
-
-    sort(itr1, itr2);
-
-    cout << endl
-         << "vector elemt sort" << endl;
-    // sort element vector
-    for (vector<int>::iterator itr = itr1; itr != itr2; ++itr)
-    {
-        cout << *itr << " ";
-    }
+    cout << "}" << endl;
 
     cout << endl;
     return EXIT_SUCCESS;
