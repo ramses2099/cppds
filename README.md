@@ -86,7 +86,7 @@ int main()
 
 ## Pairs
 ```
- pair<int, int> p{1, 3};
+    pair<int, int> p{1, 3};
 
     cout << "{" << p.first << "," << p.second << "}" << endl;
 
@@ -106,4 +106,91 @@ int main()
     cout << "}" << endl;
 
     cout << endl;
+```
+## Vector
+```
+    // A empty vector
+    vector<int> v;
+
+    v.push_back(1);
+    v.emplace_back(2);
+
+    vector<pair<int, int>> vec;
+
+    vec.push_back({1, 2});
+    vec.emplace_back(2, 2);
+
+    // Vector of size 5 with
+    // everyone as 100
+    vector<int> v2(5, 100); // {100, 100, 100, 100, 100}
+
+    // A vector of size 5
+    // initialized with 0
+    // might take garbage value,
+    // dependent on the vector
+    vector<int> v3(5); // {0,0,0,0,0}
+
+    vector<int> v4(5, 20); // {20,20,20,20,20}
+    vector<int> v5(v4);    // {20,20,20,20,20}
+
+    // Take the vector to be  {10,20,30,40}
+    vector<int>::iterator itr = v.begin();
+
+    itr++;
+    cout << *(itr) << endl; // point to 20
+
+    itr = itr + 2;
+    cout << *(itr) << endl; // point to 30
+
+    vector<int>::iterator itr2 = v.begin();
+    vector<int>::iterator itr3 = v.end();
+
+    vector<int>::iterator itr4 = v5.rbegin();
+    vector<int>::iterator itr5 = v5.rend();
+
+    cout << v[0] << " " << v.at(0);
+    cout << v.back() << " ";
+
+    // Way to  print the vector
+    for (vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
+    {
+        cout << *(itr) << " ";
+    }
+
+    for (auto itr = v.begin(); itr != v.end(); itr++)
+    {
+        cout << *(itr) << " ";
+    }
+
+    for (auto itr : v)
+    {
+        cout << itr << " ";
+    }
+
+    // {10, 20, 12, 23}
+    v.erase(v.begin() + 1);
+
+    // {10, 20, 12, 23, 35}
+    v.erase(v.begin() + 2, v.begin() + 4); // {10, 20, 35}
+
+    // Insert function
+    vector<int> v(2, 100); // {100, 100}
+    v.insert(v.begin(), 300); // {300, 100, 100}
+    v.insert(v.begin() + 1, 2, 10); // {300, 10, 10, 100, 100}
+
+    vector<int> copy(2, 50);
+    v.insert(v.begin(), copy.begin(), copy.end()); // {50, 50, 300, 10, 10, 100, 100}
+
+    // {10, 20}
+    cout << v.size(); // 2
+
+    // {10, 20}
+    v.pop_back(); // {10}
+
+    // v1 -> {10, 20}
+    // v2 -> {30, 40}
+    v1.swap(v2); // v1 -> {30, 40}, v2-> {10,20}
+
+    v.clear(); // erases the entire vector
+
 ```
