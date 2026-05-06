@@ -60,18 +60,16 @@ void print_color_heap(const vector<int> &heap)
 
 int main()
 {
-    vector<int> heap = {31, 32, 17, 18, 40, 12, 19, 12, 20, 13};
-    print_vec(heap, "33");
+    vector<int> v1 = {20, 30, 40, 25, 15};
+    print_vec(v1, "33");
 
-    //convert the vector to a heap
-    make_heap(heap.begin(), heap.end());
+    // convert the vector to a heap
+    make_heap(v1.begin(), v1.end());
+    print_color_heap(v1);
 
-    print_color_heap(heap);
-
-    //display max element of heap
-    // using front
-    cout << "max element of heap: ";
-    cout << heap.front() << endl;
+    // sort heap
+    sort_heap(v1.begin(), v1.end());
+    print_color_heap(v1);
 
     cout << endl;
     return EXIT_SUCCESS;
