@@ -58,18 +58,68 @@ void print_color_heap(const vector<int> &heap)
     cout << endl;
 }
 
+// Binary search tree
+struct BstNode
+{
+    int data;
+    BstNode *left;
+    BstNode *right;
+};
+
+BstNode *createNode(int data)
+{
+    BstNode *newNode = new BstNode();
+    newNode->data = data;
+    newNode->left = nullptr;
+    newNode->right = nullptr;
+    return newNode;
+}
+
+BstNode *insertNode(BstNode *root, int data)
+{
+    if (root == nullptr)
+    {
+        root = createNode(data);
+        return root;
+    }
+    else if (data <= root->data)
+    {
+        root->left = insertNode(root->left, data);
+    }
+    else
+    {
+        root->right = insertNode(root->right, data);
+    }
+    return root;
+}
+
+bool searchNode(BstNode* root, int data){
+    if(root == nullptr)return false;
+    else if(root->data == data)return true;
+    else if(data <= root->data)return searchNode(root->left, data);
+    else return searchNode(root->right, data);
+}
+
 int main()
 {
-    vector<int> v1 = {20, 30, 40, 25, 15};
-    print_vec(v1, "33");
+    // root node
+    BstNode *rootNode = nullptr;
+    rootNode = insertNode(rootNode, 15);
+    rootNode = insertNode(rootNode, 10);
+    rootNode = insertNode(rootNode, 20);
+    rootNode = insertNode(rootNode, 25);
+    rootNode = insertNode(rootNode, 8);
+    rootNode = insertNode(rootNode, 12);
 
-    // convert the vector to a heap
-    make_heap(v1.begin(), v1.end());
-    print_color_heap(v1);
+    int n;
+    cout << "Enter the number be search: ";
+    cin>>n;
 
-    // sort heap
-    sort_heap(v1.begin(), v1.end());
-    print_color_heap(v1);
+    if(searchNode(rootNode, n))cout << endl << "Found" <<endl;
+    else cout << "No Found" << endl;
+
+
+    delete rootNode;
 
     cout << endl;
     return EXIT_SUCCESS;
